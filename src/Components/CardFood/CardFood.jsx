@@ -1,27 +1,21 @@
 import React from 'react'
-import { AddButton, Btn, Card, Control, Count, Details, Visual } from './CardFoodStyles'
+import { Button } from '../BasicStyles/BasicStyles';
+import { Card } from './CardFoodStyles';
+import  Count  from './Count/Count';
+import jamonYMorron from '../../assets/img/jamonymorron.jpg';
 
 /* Falta modificar Diseño */
 
-const CardFood = () => {
+const CardFood = ({dato}) => {
   return (
     <Card>
-        <Visual />
-        <Details>
-            <h2>Jamón y Morron</h2>
-            <h3>$450</h3>
-            <Count>
-                <p>Cantidad</p>
-                <Control>
-                  <Btn>-</Btn>
-                  <input defaultValue={0}/>
-                  <Btn>+</Btn>
-                </Control>
-                
-            </Count>
-            <AddButton>Agregar</AddButton>
-        </Details>
+      <img src={jamonYMorron} alt="img1" />
+      <h4>{dato.titulo}</h4>
+      <p>{dato.precio}</p>
+      <Count />
+      <Button>Agregar</Button>
     </Card>
+
   )
 }
 

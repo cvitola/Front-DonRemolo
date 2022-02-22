@@ -22,7 +22,7 @@ export const Button = styled.button`
     border-radius: 10px;
     box-shadow: 1px 1px 1px grey;
     
-    & :hover{
+    &:hover{
         color: ${colorsTheme.green1};
         background: white;
     }`;
@@ -31,4 +31,14 @@ export const H2 = styled.h2`
     padding: 10px;
     margin: 10px;
     color: ${colorsTheme.red3};
+    `;
+
+export const Container = styled.div`
+    width: 100%;
+    max-width: 1200px;
+    /*height: 430px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
     `;

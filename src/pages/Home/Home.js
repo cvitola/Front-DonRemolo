@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, H1, H2, P } from '../BasicStyles/BasicStyles'
+import { Button, H1, H2, P } from '../../Components/BasicStyles/BasicStyles'
 import { Container, ImgHome } from './HomeStyles'
 import logo from '../../assets/img/logo.jpg';
 import delivery from '../../assets/img/deliveryLogo.png';

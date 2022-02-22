@@ -9,9 +9,9 @@ const NavBar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const navigate = useNavigate();
 
-    const handleOnClickShop = () => {
+    const handleOnClickPizza = () => {
         setShowMobileMenu(!showMobileMenu);
-        navigate('/shopping');
+        navigate('/pizzas');
     }
 
     const handleOnClickHome = () => {
@@ -20,6 +20,11 @@ const NavBar = () => {
     }
 
     const handleOnClickContact = () =>{
+        setShowMobileMenu(!showMobileMenu);
+        navigate('/contact');
+    }
+
+    const handleOnClickShop = () =>{
         setShowMobileMenu(!showMobileMenu);
         navigate('/contact');
     }
@@ -40,7 +45,7 @@ const NavBar = () => {
                     <MenuItem onClick={handleOnClickHome}>
                         <MenuItemLink>HOME</MenuItemLink>
                     </MenuItem>
-                    <MenuItem onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                    <MenuItem onClick={handleOnClickPizza}>
                         <MenuItemLink>PIZZAS</MenuItemLink>
                     </MenuItem>
                     <MenuItem onClick={handleOnClickContact}>
