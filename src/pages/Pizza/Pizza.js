@@ -1,14 +1,32 @@
 import React, {useState, useEffect} from 'react';
-import {pizzas} from '../../assets/Constants/Constants';
-import {Container, H1} from '../../Components/BasicStyles/BasicStyles';
+/*import {pizzas} from '../../assets/Constants/Constants';*/
+import {Container, H1, Snipper} from '../../Components/BasicStyles/BasicStyles';
 import CardFood from '../../Components/CardFood/CardFood';
+import { getAllProducts } from '../../Axios/Axios';
 
 const Pizza = () => {
 
     const [arrayPizzas, setArrayPizzas] = useState([]);
-    
+    const [loading, setLoading] = useState(false);
+
+    const onGetAllProducts = async () =>{
+        try{
+            const response = await getAllProducts();
+            setArrayPizzas(response.data);
+        }
+        catch(error){
+            alert(error);
+        }
+    }
     useEffect( () => {
-        setArrayPizzas(pizzas);
+        setLoading(true);
+        /*setArrayPizzas(pizzas);*/
+        onGetAllProducts();
+        setTimeout(() => {
+
+            setLoading(false);
+        }, 1500);
+
     },[])
     
 
@@ -16,10 +34,13 @@ const Pizza = () => {
       <>
         <H1>NUESTRAS PIZZAS</H1>
         <Container>
-            {
-                arrayPizzas.map( pi => (
+            {   
+                loading ?
+                    <Snipper />
+                :
+                arrayPizzas?.map( pi => (
                     <CardFood dato={pi} key={pi.id} />
-                ))
+                )) 
             }
         </Container>
       </>

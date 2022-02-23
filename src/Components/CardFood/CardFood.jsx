@@ -10,8 +10,8 @@ const CardFood = ({dato}) => {
   return (
     <Card>
       <img src={jamonYMorron} alt="img1" />
-      <h4>{dato.titulo}</h4>
-      <p>{dato.precio}</p>
+      <h4>{dato.productName}</h4>
+      <p>{dato.price}</p>
       <Count />
       <Button>Agregar</Button>
     </Card>
